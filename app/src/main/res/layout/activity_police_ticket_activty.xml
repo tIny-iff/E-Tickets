@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:showDividers="middle"
+    android:background="@drawable/background"
+    android:divider="@drawable/empty_tall_divider"
+    android:layout_height="match_parent"
+    tools:context="com.e_tickets.e_ticketingsystem.PoliceTicketActivty">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/policeimg"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter commuter TRN"
+        android:textColorHint="@color/maroon"
+        android:background="@color/white"
+        android:id="@+id/TRN"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textColor="@color/maroon"
+        android:text="Name to be generated here"
+        android:id="@+id/name"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="email to be entered here"
+        android:background="@color/white"
+        android:id="@+id/email"
+        android:textColor="@color/maroon"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gender to be entered here"
+        android:background="@color/white"
+        android:id="@+id/gender"
+        android:textColor="@color/maroon"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/maroon"
+        android:text="License number to be entered here"
+        android:background="@color/white"
+        android:id="@+id/licensenum"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warrant for arrest here"
+        android:id="@+id/warrant"
+        android:background="@color/white"
+        android:textColor="@color/maroon"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter street name currently located"
+        android:background="@color/white"
+        android:textColorHint="@color/maroon"
+        android:id="@+id/Streetname"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter"
+        android:id="@+id/Enter"
+        android:onClick="EnterClicked"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See Location"
+        android:id="@+id/Location"
+        android:onClick="LocationClicked"
+        />
+
+
+
+</LinearLayout>

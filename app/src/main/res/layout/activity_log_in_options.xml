@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:showDividers="middle"
+    android:divider="@drawable/empty_tall_divider"
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical"
+    tools:context="com.e_tickets.e_ticketingsystem.LogInOptions">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/badge"
+        android:text="Police"
+        android:onClick="PoliceClicked"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:id="@+id/Police"
+
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/policestop"
+        android:text="Commuter"
+        android:id="@+id/Commuter"
+        android:onClick="CommuterClicked"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/judge"
+        android:text="Judiciary"
+        android:id="@+id/Judiciary"
+        android:onClick="JudiciaryClicked"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+
+        />
+
+
+
+
+
+
+
+</LinearLayout>

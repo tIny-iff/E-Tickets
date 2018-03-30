@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    tools:context="com.e_tickets.e_ticketingsystem.ContactUs">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="To:E-TicketingSystem@gmail.com"
+        android:textColorHint="@color/maroon"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:hint="Enter message here:"
+        android:textColorHint="@color/maroon"
+        />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/paperplane"
+        android:onClick="SendClicked"
+        android:id="@+id/Send"
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:onClick="CancelClicked"
+        android:id="@+id/Cancel"/>
+
+
+</LinearLayout>
