@@ -8,9 +8,13 @@ public class Offenderclass {
 
     private String email;
 
+    private String f_name;
+
+    private String l_name;
+
     private  String TRN;
 
-    private int license_num;
+    private int licensePL_num;
 
     private String W_Status;
 
@@ -20,11 +24,19 @@ public class Offenderclass {
 
     private String address;
 
-    public Offenderclass(String email, String trn, int License, String warrant_S, String Gender, String Phone_num, String Address) {
+    private String Location;
+
+
+
+    public Offenderclass(String fname,String lname,String email, String trn, int License, String warrant_S, String Gender, String Phone_num, String Address, String locate) {
+        this.f_name=fname;
+        this.l_name=lname;
         this.email = email;
+        this.Location = locate;
+
         this.address=Address;
         this.TRN=trn;
-        this.license_num=License;
+        this.licensePL_num=License;
         this.W_Status=warrant_S;
         this.gender=Gender;
         this.phone_num=Phone_num;
@@ -32,6 +44,14 @@ public class Offenderclass {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getLocation() {
+        return Location;
+    }
+
+    public void setLocation(String location) {
+        Location = location;
     }
 
     public void setEmail(String email) {
@@ -46,12 +66,12 @@ public class Offenderclass {
         this.TRN = TRN;
     }
 
-    public int getLicense_num() {
-        return license_num;
+    public int getLicensePL_num() {
+        return licensePL_num;
     }
 
-    public void setLicense_num(int license_num) {
-        this.license_num = license_num;
+    public void setLicensePL_num(int license_num) {
+        this.licensePL_num = license_num;
     }
 
     public String getW_Status() {

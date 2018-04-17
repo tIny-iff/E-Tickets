@@ -28,6 +28,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 
@@ -97,12 +98,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                             Geocoder geocoder = new Geocoder(getApplicationContext());
                             try {
+                                
                                 List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
-                                String name = addressList.get(0).getThoroughfare()+addressList.get(0).getLocality() + ",";
+                                String name = addressList.get(0).getThoroughfare()+","+addressList.get(0).getLocality() + ",";
                                 name += addressList.get(0).getCountryName();
                                 //mMap.addMarker(new MarkerOptions().position(latLng).title(name).icon(BitmapDescriptorFactory.fromResource(R.drawable.police)));
                                 MarkerOptions marker = new MarkerOptions().position(latLng).title(name);
                                 marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.policeshield));
+                               mMap.clear();
+
                                 mMap.addMarker(marker);
 
                                 //mMap.addMarker(new MarkerOptions().position(latLng).title(name));
@@ -152,6 +156,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);
                                 String name = addressList.get(0).getCountryName() + ",";
                                 name += addressList.get(0).getLocality();
+
                                 mMap.addMarker(new MarkerOptions().position(latLng).title(name));
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 20.2f));
 

@@ -54,6 +54,10 @@ public class PoliceLogInActivity extends AppCompatActivity {
             },2000);
 
 
+        }else{
+            prgPolice.setVisibility(View.INVISIBLE);
+            Snackbar.make(view, "Incorrect credentials entered!", Snackbar.LENGTH_LONG)
+                    .setAction("Warning",null).show();
         }
 
     }

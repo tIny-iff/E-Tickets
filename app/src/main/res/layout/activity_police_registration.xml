@@ -3,8 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent"
     tools:context="com.e_tickets.e_ticketingsystem.PoliceRegistrationActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:textSize="30sp"
+        android:textColorHint="@color/maroon"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:textSize="30sp"
+        android:textColorHint="@color/maroon"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email "
+        android:textSize="30sp"
+        android:textColorHint="@color/maroon"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Badge Number"
+        android:textSize="30sp"
+        android:textColorHint="@color/maroon"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textSize="30sp"
+        android:textColorHint="@color/maroon"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submit"
+        android:onClick="RegisterSubclicked"
+        />
+
+
+
 
 </LinearLayout>

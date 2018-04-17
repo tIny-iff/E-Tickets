@@ -32,7 +32,7 @@ public class LogInOptions extends AppCompatActivity {
         Button cancel = (Button)findViewById(R.id.Cancel);
        // cancel.setOnClickListener(new View.OnClickListener() {
 
-                Intent commuterIntent = new Intent(LogInOptions.this,MainActivity.class);
+                Intent commuterIntent = new Intent(LogInOptions.this,CommuterLogin.class);
                 startActivity(commuterIntent);
             }
 

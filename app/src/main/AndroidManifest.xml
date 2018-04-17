@@ -64,9 +64,15 @@
         <activity
             android:name=".PoliceTicketActivty"
             android:label="Police Ticketing" />
-        <activity android:name=".PoliceLogInActivity" />
-        <activity android:name=".PoliceRegistrationActivity" />
-        <activity android:name=".CommuterLogin"></activity>
+        <activity android:name=".PoliceLogInActivity"
+            android:label="Police Log IN"/>
+        <activity android:name=".PoliceRegistrationActivity"
+            android:label="Police Registration"/>
+        <activity android:name=".CommuterLogin"
+            android:label="Commuter Log IN"/>
+
+
+
     </application>
 
 </manifest>
