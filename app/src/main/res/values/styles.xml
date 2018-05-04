@@ -30,4 +30,12 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+    <style name="mySpinnerItemstyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">
+        @color/colorPrimary</item>
+        <item name="android:background">
+            @color/white
+        </item>
+    </style>
+
 </resources>

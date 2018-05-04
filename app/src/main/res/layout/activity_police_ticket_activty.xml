@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_marginRight="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginBottom="10dp"
-    android:layout_marginTop="10dp"
-    android:divider="@drawable/empty_tall_divider"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="fill_parent"
     android:background="@drawable/background"
-    android:layout_height="match_parent"
-    tools:context="com.e_tickets.e_ticketingsystem.PoliceTicketActivty">
+tools:context="com.e_tickets.e_ticketingsystem.PoliceTicketActivty">
 
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+
+    >
 
 
 
@@ -21,6 +22,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="10dp"
+        android:layout_gravity="center"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="false"
@@ -28,8 +30,6 @@
         android:id="@+id/policeimg"
         android:src="@drawable/policeimg"
         />
-
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,6 +40,20 @@
         android:layout_below="@+id/policeimg"
         android:id="@+id/TRN"
         />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please enter license plate of vehicle:"
+        android:background="@drawable/rounded_corner"
+        android:id="@+id/Platenum"
+        android:textColorHint="@color/maroon"
+        android:layout_margin="10dp"
+        />
+
+
+
     <TextView
         android:layout_margin="10dp"
         android:visibility="gone"
@@ -48,7 +62,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/TRN"
         android:textColor="@color/maroon"
-        android:text="First name"
+        android:text="First name:"
+        android:textSize="20sp"
         android:id="@+id/fname"
         />
 
@@ -61,20 +76,75 @@
         android:layout_alignParentRight="true"
         android:background="@drawable/rounded_corner"
         android:textColor="@color/maroon"
-        android:text="Last name"
+        android:text="Last name:"
+        android:textSize="20sp"
         android:id="@+id/lname"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_margin="10dp"
-        android:visibility="gone"
+        android:textSize="20sp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner"
         android:layout_below="@+id/fname"
-        android:text="Email to be generated here"
+        android:text="Email:"
+        android:visibility="gone"
         android:textColor="@color/maroon"
-        android:id="@+id/Email"
+        android:id="@+id/commuterEmail"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_below="@+id/Platenum"
+        android:text="Vehicle Type:"
+        android:textColor="@color/maroon"
+        android:id="@+id/Vehicletype"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_below="@+id/Vehicletype"
+        android:text="Vehicle Make:"
+        android:textColor="@color/maroon"
+        android:id="@+id/Vehiclemake"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_below="@+id/Vehiclemake"
+        android:text="Vehicle Owner:"
+        android:textColor="@color/maroon"
+        android:id="@+id/VehicleOwner"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_below="@+id/VehicleOwner"
+        android:text="Vehicle Model:"
+        android:textColor="@color/maroon"
+        android:id="@+id/VehicleModel"
         />
 
 
@@ -83,21 +153,22 @@
         android:layout_margin="10dp"
         android:visibility="gone"
         android:layout_height="wrap_content"
-        android:text="Gender to be entered here"
+        android:textSize="20sp"
+        android:text="Gender:"
         android:id="@+id/gender"
         android:background="@drawable/rounded_corner"
-        android:layout_below="@+id/Email"
+        android:layout_below="@+id/VehicleModel"
         android:textColor="@color/maroon"
         />
 
-    <TextView
+    <EditText
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:visibility="gone"
+        android:textSize="20sp"
         android:layout_height="wrap_content"
         android:textColor="@color/maroon"
-        android:layout_below="@+id/gender"
-        android:text="License Plate number to be entered here"
+        android:text="Vehicle Registration Num:"
         android:background="@drawable/rounded_corner"
         android:id="@+id/licensePlnum"
         />
@@ -106,33 +177,94 @@
     <EditText
         android:layout_margin="10dp"
         android:layout_width="match_parent"
+        android:textSize="20sp"
         android:layout_height="wrap_content"
         android:hint="Enter street name currently located"
         android:background="@drawable/rounded_corner"
-        android:layout_below="@+id/licensePlnum"
         android:textColorHint="@color/maroon"
         android:id="@+id/Streetname"
         />
 
-    <EditText
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Offense fee due:"
-        android:id="@+id/Fee"
-        android:visibility="gone"
-        android:textColorHint="@color/maroon"
-        android:drawableLeft="@drawable/dollarsigns"
-        android:background="@drawable/rounded_corner"
-        android:layout_below="@id/Streetname"
+        android:textSize="20sp"
+        android:text="Please choose offense(s) from below:"
+        android:textColor="@color/maroon"
         />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/silent"
+        android:onClick="CheckboxClicked"
+        android:text="disrupt silent zone"
+        android:layout_below="@id/Platenum"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speed32"
+        android:onClick="CheckboxClicked"
+        android:text="speeding by 16-32mph"
+        android:layout_below="@id/silent"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="speeding by >= 50mph"
+        android:id="@+id/speed50"
+        android:onClick="CheckboxClicked"
+        android:layout_below="@id/speed32"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="CheckboxClicked"
+        android:text="dangerous driving"
+        android:id="@+id/Rdriving"
+        android:layout_below="@id/speed50"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="no seat belt"
+        android:onClick="CheckboxClicked"
+        android:id="@+id/noSeatbelt"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Careless Overtaking"
+        android:onClick="CheckboxClicked"
+        android:id="@+id/Overtaking"
+        android:layout_below="@id/noSeatbelt"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="CheckboxClicked"
+        android:text="failure to obey any traffic sign"
+        android:id="@+id/Tlight"
+        android:layout_below="@id/Overtaking"
+        />
+
+
+
 
 
     <android.support.v7.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter"
+        android:layout_gravity="center"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/Fee"
+        android:layout_below="@+id/Tlight"
         android:id="@+id/Enter"
         android:onClick="EnterClicked"
         />
@@ -141,6 +273,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="See Location"
+        android:layout_gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/Enter"
         android:id="@+id/Location"
@@ -150,6 +283,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Issue Ticket"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/Location"
@@ -159,10 +293,10 @@
 
 
 
-</RelativeLayout>
+</LinearLayout>
 
 
 
 
 
-
+</ScrollView>

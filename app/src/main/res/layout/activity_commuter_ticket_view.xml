@@ -1,10 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     tools:context="com.e_tickets.e_ticketingsystem.CommuterTicketView">
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+       android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_height="96dp"
+        android:src="@drawable/driver"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/rounded_corner"
+        android:text="OffenseCode:"
+        android:id="@+id/Ocode"
+        android:layout_margin="10dp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        android:id="@+id/ComVtype"
+        android:textSize="20sp"
+       android:text="Vehicle type:"
+        android:textColorHint="@color/maroon"
+        android:background="@drawable/rounded_corner"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:id="@+id/ComOffenses"
+        android:text="Offense Commited:"
+        android:textColorHint="@color/maroon"
+        android:background="@drawable/rounded_corner"
+        />
+
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:text="Amount Owed:"
+        android:id="@+id/ComOwed"
+        android:drawableLeft="@drawable/dollarsigns"
+        android:textColorHint="@color/maroon"
+        android:background="@drawable/rounded_corner"
+        />
+    <TextView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:id="@+id/ComTime"
+        android:text="Time Issued:"
+        android:textColorHint="@color/maroon"
+        android:background="@drawable/rounded_corner"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Oustanding Ticket(s)"
+        android:onClick="ViewTicketClicked"
+        android:id="@+id/ViewTicket"
+        android:layout_gravity="center"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:id="@+id/Finish"
+        android:onClick="FinishClicked"
+        />
+
+</LinearLayout>

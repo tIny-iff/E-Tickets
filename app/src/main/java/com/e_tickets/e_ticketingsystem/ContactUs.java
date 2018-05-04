@@ -6,7 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import java.util.concurrent.ExecutionException;
 
 public class ContactUs extends AppCompatActivity {
 
@@ -30,17 +34,32 @@ public class ContactUs extends AppCompatActivity {
 
     public void SendClicked(View view)
     {
-        ImageButton send = (ImageButton)findViewById(R.id.Send);
+        EditText contact = findViewById(R.id.ContactUs);
 
-                Snackbar.make(view, "Email Sent", Snackbar.LENGTH_LONG)
-                        .setAction("Contact Us",null).show();
-//                Intent cancelIntent = new Intent(ContactUs.this, MainActivity.class);
-//                startActivity(cancelIntent);
+        final SendEmail sendEmail =new SendEmail();
+        sendEmail.setEmailData("trevidlas@gmail.com","Contact Us",contact.getText().toString());
+        sendEmail.execute();
+        try {
+            String status=sendEmail.get();
+            System.out.println("Email status:"+status);
+            if(status.equalsIgnoreCase("Email was sent"))
+            {
+                //Toast.makeText(this,"Ticket was issued to commuter, logging out...",Toast.LENGTH_LONG).show();
+                Intent logout = new Intent(ContactUs.this,MainActivity.class);
+                startActivity(logout);
             }
-
-
-
-
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
+
+
+
+
+
+
+}
 
 

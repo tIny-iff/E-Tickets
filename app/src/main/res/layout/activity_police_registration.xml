@@ -6,45 +6,57 @@
     android:background="@drawable/background"
     android:orientation="vertical"
     android:gravity="center"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
     android:layout_height="match_parent"
     tools:context="com.e_tickets.e_ticketingsystem.PoliceRegistrationActivity">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_gravity="center"
+        android:layout_height="96dp"
+        android:src="@drawable/jcf"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"/>
+
+
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name"
+        android:layout_margin="10dp"
+        android:hint="Enter your ranking: "
         android:textSize="30sp"
+        android:id="@+id/ranking"
+        android:background="@drawable/rounded_corner"
         android:textColorHint="@color/maroon"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"
+        android:layout_margin="10dp"
+        android:hint="Enter Badge Number:"
         android:textSize="30sp"
+        android:id="@+id/badgeNum"
+        android:background="@drawable/rounded_corner"
+        android:textColorHint="@color/maroon"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Enter your station code as your password:"
+        android:textSize="30sp"
+        android:id="@+id/stationCode"
         android:textColorHint="@color/maroon"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email "
-        android:textSize="30sp"
-        android:textColorHint="@color/maroon"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Badge Number"
-        android:textSize="30sp"
-        android:textColorHint="@color/maroon"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:textSize="30sp"
-        android:textColorHint="@color/maroon"/>
 
     <Button
         android:layout_width="wrap_content"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/submit"

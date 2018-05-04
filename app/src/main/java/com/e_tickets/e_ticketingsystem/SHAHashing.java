@@ -1,11 +1,7 @@
-package com.qrcode.majorproject.tevonwallace.qrcode.hashing;
+package com.e_tickets.e_ticketingsystem;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-/**
- * Created by TevonWallace on 8/13/17.
- */
 
 public class SHAHashing {
     public String hashPassword(String password) {

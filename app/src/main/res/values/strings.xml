@@ -8,6 +8,18 @@
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
+
+    <string-array name="Offenses">
+        <item>Choose type of offense commited</item>
+        <item>disrupt silent zone</item>
+        <item>speeding by 16-32mph</item>
+        <item>speeding by >= 50mph</item>
+        <item>dangerous driving</item>
+        <item>no seat belt</item>
+        <item>overtaking</item>
+        <item>failure to obey any traffic sign</item>
+    </string-array>
+
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>

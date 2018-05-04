@@ -10,10 +10,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
-
+private Connection connection = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +47,49 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(contactIntent);
             }
         });
+
+//        BackgroundTask backgroundTask = new BackgroundTask();
+//        backgroundTask.execute();
+//
+//        try{
+//            this.connection=backgroundTask.get();
+//            if(this.connection != null)
+//            {
+//                Toast.makeText(this,"The connection a work check your code me g",Toast.LENGTH_SHORT).show();
+//            }
+//        }catch(NullPointerException e)
+//        {
+//            Toast.makeText(this,"NTN IS THERE",Toast.LENGTH_LONG).show();
+//
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        }
+
+
+
+        DatabaseFactory databaseFactory = new DatabaseFactory();
+        databaseFactory.execute();
+
+        try {
+            Connection connection = databaseFactory.get();
+
+            if (connection == null) {
+                Toast.makeText(this, "No Connection!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this, "Connection was successful!", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
     }
     public void WelcomeClicked(View view)
     {
+
         Intent welcomeIntent = new Intent(MainActivity.this,LogInOptions.class);
         startActivity(welcomeIntent);
     }

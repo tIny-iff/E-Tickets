@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -106,6 +107,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 MarkerOptions marker = new MarkerOptions().position(latLng).title(name);
                                 marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.policeshield));
                                mMap.clear();
+
+                               if(addressList.get(0).getThoroughfare()=="null")
+                               {
+                                   Toast.makeText(MapsActivity.this,"Street name cannot be generated please manually enter on Ticket",Toast.LENGTH_LONG).show();
+                                   Intent ticket = new Intent(MapsActivity.this,PoliceTicketActivty.class);
+                                   ticket.addFlags(ticket.FLAG_ACTIVITY_CLEAR_TOP);
+                                   startActivity(ticket);
+                               }
 
                                 mMap.addMarker(marker);
 

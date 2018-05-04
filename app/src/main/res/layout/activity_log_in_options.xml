@@ -52,6 +52,7 @@
         android:layout_height="100dp"
         android:background="@drawable/judge"
         android:text="Judiciary"
+        android:visibility="gone"
         android:id="@+id/Judiciary"
         android:onClick="JudiciaryClicked"
         android:textSize="40sp"

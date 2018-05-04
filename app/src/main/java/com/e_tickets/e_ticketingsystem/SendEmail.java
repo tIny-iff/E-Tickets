@@ -1,9 +1,10 @@
-package com.qrcode.majorproject.tevonwallace.qrcode;
+package com.e_tickets.e_ticketingsystem;
 
+import android.content.pm.PackageInstaller;
+import android.media.MediaCas;
 import android.os.AsyncTask;
 
 import java.util.Properties;
-
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -13,9 +14,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/**
- * Created by TevonWallace on 8/12/17.
- */
+
 
 public class SendEmail extends AsyncTask<Void, Void, String> {
     private Session session;
@@ -38,7 +37,7 @@ public class SendEmail extends AsyncTask<Void, Void, String> {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "465");
 
-        this.session = Session.getDefaultInstance(props, new Authenticator() {
+        this.session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication("ttest6432@gmail.com", "Uhg-8nd-JSG-hhG");
             }

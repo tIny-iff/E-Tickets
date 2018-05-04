@@ -1,10 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_marginLeft="10dp"
+    android:orientation="vertical"
+    android:layout_marginRight="10dp"
     android:layout_height="match_parent"
     tools:context="com.e_tickets.e_ticketingsystem.CommuterRegistrationActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_gravity="center"
+        android:layout_height="96dp"
+        android:src="@drawable/driver"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"/>
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_margin="10dp"
+        android:hint="Please enter Tax Registration Number(TRN):"
+        android:textColorHint="@color/maroon"
+        android:id="@+id/C_Trn"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_margin="10dp"
+        android:hint="First Name:"
+        android:textSize="20sp"
+        android:textColorHint="@color/maroon"
+        android:id="@+id/C_Fname"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_margin="10dp"
+        android:hint="Last Name:"
+        android:textSize="20sp"
+        android:textColorHint="@color/maroon"
+        android:id="@+id/C_Lname"
+        />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_margin="10dp"
+        android:hint="Middle Name:"
+        android:textSize="20sp"
+        android:textColorHint="@color/maroon"
+        android:id="@+id/C_Mname"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:layout_margin="10dp"
+        android:hint="Password:"
+        android:textColorHint="@color/maroon"
+        android:textSize="20sp"
+        android:id="@+id/C_Password"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:onClick="C_SubmitClicked"
+        android:layout_gravity="center"
+        />
+
+
+
+</LinearLayout>

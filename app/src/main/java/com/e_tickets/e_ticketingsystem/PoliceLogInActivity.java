@@ -2,6 +2,7 @@ package com.e_tickets.e_ticketingsystem;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.provider.ContactsContract;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,9 +11,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
+
 public class PoliceLogInActivity extends AppCompatActivity {
 
-    private  EditText Memail;
+    private  EditText Mbadge;
     private  EditText Mpassword;
 
     ProgressBar prgPolice;
@@ -28,17 +31,34 @@ public class PoliceLogInActivity extends AppCompatActivity {
     {
         prgPolice.setVisibility(View.VISIBLE);
 
-        String email;
+        final String badgenum;
         String password;
-        Memail= (EditText)findViewById(R.id.Email);
+        Mbadge = (EditText)findViewById(R.id.Email);
         Mpassword = (EditText)findViewById(R.id.Password);
 
         Snackbar.make(view, "Please wait to verify LogIn", Snackbar.LENGTH_LONG)
                 .setAction("Sign in",null).show();
 
-        email=Memail.getText().toString();
+        badgenum=Mbadge.getText().toString();
         password=Mpassword.getText().toString();
-        if(email.equalsIgnoreCase("police@gmail.com") && password.equalsIgnoreCase("iamapolice123"))
+        SHAHashing hash = new SHAHashing();
+
+        System.out.println("Hashed as:"+hash.hashPassword(password));
+
+        Database database = new Database(this);
+        database.execute("Police Login",badgenum);
+
+        Offenderclass offenderclass = new Offenderclass();
+
+        try {
+            offenderclass = database.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        if(password.equalsIgnoreCase(offenderclass.getPolice_pass()))
         {
             prgPolice.setProgress(25);
 
@@ -49,6 +69,7 @@ public class PoliceLogInActivity extends AppCompatActivity {
                 public void run() {
                     prgPolice.setProgress(80);
                     Intent SuccessLog = new Intent(PoliceLogInActivity.this,PoliceTicketActivty.class);
+                    SuccessLog.putExtra("Badgenum",badgenum);
                     startActivity(SuccessLog);
                 }
             },2000);
